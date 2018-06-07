@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complex Enterprise Custom Software AWS Cloud">
+  <meta name="author" content="Lighthouse Software, Inc.">
+  <title>Lighthouse Software, Inc.</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://use.fontawesome.com/142874eaca.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+  <link href="css/creative.css" rel="stylesheet">
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/masked-input.js"></script>
+  <script src="vendor/jquery.validate.min.js"></script>
+  <link href="css/creative.css" rel="stylesheet">
+  <link href="css/wellsfargo.css" rel="stylesheet">
+<script>
+    $(function($) {
+      $('#phone-input').mask("(999)999-9999",{placeholder:" "});
+      $('#contact-form').validate({
+        rules: {
+          name: "required",
+          email: {
+            required: true,
+            email: true
+          },
+          phone: {
+            digits: true,
+            required: false,
+            minlength: 10
+          },
+          message: "required"
+        }
+      });
+      var $submitButton = $('#contact-submit');
+      $submitButton.click(function(e) {
+        e.preventDefault();
+        var isValid = $('#contact-form').valid();
+        var name = $('#name-input').val();
+        var phone = $('#phone-input').val();
+        var email = $('#email-input').val();
+        var message = $('#message-input').val();
+        var data = {
+          name: name,
+          phone: phone,
+          email: email,
+          message: message
+        };
+        if (isValid) {
+          $submitButton.html('<i id="sending-spinner" class="font-size:18px fa fa-circle-o-notch fa-spin" style="font-size:18px;"></i> Sending...');
+          $submitButton.prop("disabled", "disabled");
+          $.ajax({
+            type: 'POST',
+            crossDomain: true,
+            url: 'https://xolgpbicyf.execute-api.us-west-2.amazonaws.com/prod/sendContactEmail',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function () {
+              $('#success-dialog').modal();
+              $submitButton.html('Send');
+              $submitButton.prop("disabled", "false");
+            },
+            error: function (e) {
+              $('#error-dialog').modal();
+              $submitButton.html('Send');
+              $submitButton.prop("disabled", "false");
+            }
+          })
+        }
+        console.log('clicked');
+      });
+
+      $('#message-sent-button').click(function() {
+        window.location.href = "/";
+      });
+
+      $('#message-error-button').click(function() {
+        window.location.href = "/#contact";
+      });
+    });
+  </script>
+</head>
+<body id="page-top">
+<nav class="navbar navbar-default navbar-fixed-top affix">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        Menu <span class="sr-only">Toggle navigation</span>  <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand page-scroll" href="home.html"><img src="img/logo-india.png" class="logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a class="page-scroll" href="http://blog.lighthousesoftware.com">Blog</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="https://jobs.lever.co/lighthousesoftware">Careers</a>
+        </li>
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section>
+  <div class="row contact-page-container">
+    <h2 class="section-heading">Let's Get In Touch!</h2>
+    <hr>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name-input">Name <span class="required-indicator">*</span></label>
+        <input type="text" class="form-control contact-name" id="name-input" aria-describedby="name" placeholder="Enter name" required>
+      </div>
+      <div class="form-group">
+        <label for="email-input">Email address <span class="required-indicator">*</span></label>
+        <input name="email" type="email" class="form-control contact-email" id="email-input" aria-describedby="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="phone-input">Phone Number</label>
+        <input type="tel" class="form-control contact-phone" id="phone-input" aria-describedby="phone" placeholder="Enter phone number">
+      </div>
+      <div class="form-group">
+        <label for="message-input">Message <span class="required-indicator">*</span></label>
+        <textarea id="message-input" name="message" rows="5" class="form-control" placeholder="Your message"></textarea>
+      </div>
+      <button id="contact-submit" type="submit" class="btn btn-primary contact-send-button">
+        <span id="send-button-label">Send</span>
+      </button>
+    </form>
+  </div>
+</section>
+<div id="footer">
+  <div id="footer-logo-box">
+    <a href="https://LighthouseSoftware.com/"><img src="img/LH.jpg" /></a>
+  </div>
+  <div id="footer-text-box">
+    <div id="footer-address">
+      <h3>Address</h3>
+      <p>D-1,Spaces & More,<br>Plot No:645,Road No-36,<br>Jubilee Hills,Hyderabad-500033</p>
+      <p>
+        Phone: 9989751015<br />
+        land-line : 7207089888
+      </p>
+    </div>
+    <div id="footer-services">
+      <h3>Services</h3>
+      <p><a href="#refactoring" class="page-scroll">Software Refactoring</a></p>
+      <p><a href="#replatforming" class="page-scroll">Software Replatforming</a></p>
+      <p><a href="#modernization" class="page-scroll">Software Modernization</a></p>
+      <p><a href="#amazon-web-services" class="page-scroll">AWS Migration</a></p>
+    </div>
+  </div>
+  <div id="social-icons-box">
+    <a href="https://www.facebook.com/lighthousesoftware/"><i class="fa fa-3x fa-facebook-official social-icon" aria-hidden="true"></i></a>
+    <a href="https://www.linkedin.com/company-beta/2948785/"><i class="fa fa-3x fa-linkedin-square social-icon" aria-hidden="true"></i></a>
+    <a href="https://github.com/lssinc"><i class="fa fa-3x fa-github social-icon" aria-hidden="true"></i></a>
+    <a href="http://blog.LighthouseSoftware.com"><i class="fa fa-3x fa-rss social-icon" aria-hidden="true"></i></a>
+  </div>
+  <div id="footer-copyright">
+    &copy; 2017, Lighthouse Software, Inc.
+  </div>
+</div>
+
+<div id="success-dialog" class="modal fade">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Message Sent!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Thanks for getting in touch! We'll get back to you as quickly as possible.
+      </div>
+      <div class="modal-footer">
+        <button id="message-sent-button" type="button" class="btn btn-primary contact-send-button" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="error-dialog" class="modal fade">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Something's gone wrong.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Sorry about that, looks like there was an issue sending your message. Please email us directly at <a href="mailto:inquiry@lighthousesoftware.com">inquiry@lighthousesoftware.com</a>
+        or give us a call at <a href="tel:1-800-786-5544">1-800-786-5544</a>.
+      </div>
+      <div class="modal-footer">
+        <button id="message-error-button" type="button" class="btn btn-primary contact-send-button" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="js/creative.min.js"></script>
+<script type="application/javascript">
+  $(function() {
+    function isAppleMobile() {
+      return navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i);
+    }
+    if (isAppleMobile()) {
+      $(".client-quote-container").css('background-attachment', 'scroll');
+    }
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107167918-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  gtag('config', 'UA-107167918-1');
+</script>
+</body>
+</html>
