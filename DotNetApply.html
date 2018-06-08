@@ -1,0 +1,198 @@
+<html>
+    <head>
+        <style>
+            div.absolute2 {
+    position: absolute;
+    top: 15px;
+    padding-top: 30px;
+    padding-left: 240px;
+    width: 1340px;
+    height: 160px;
+                left: 5px;
+    border: 0px solid blue;
+    background-color: white;
+                
+            }
+            div.absolute3 {
+    position: relative;
+    left:2px;
+    width: 1329px;
+    height: 128px;
+    border: 0px solid red;
+    text-align: center;
+    background: #edeef1;
+    padding-top: 20px;
+                padding-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+                margin-top: -15px;
+}
+            * {
+                box-sizing: border-box;
+            }
+            input[type=text], textarea {
+                padding:1.5px;
+                border: 1px solid gray;
+                width: 60%;
+                border-radius: 2px;
+                
+                resize: vertical;
+                background-color: white;
+                font: normal 400 16px/1.8 Lato;
+            }
+            label {
+                padding: 20px 20px 20px 0px;
+                display: inline-block;
+            }
+            button {
+                background-color:  #e5950b;
+                color: black;
+                padding: 14px 48px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-left: 230px;
+                margin-bottom: 20px; 
+            }
+            button:hover {
+                background-color:  #e5950b;
+                color:white;
+            }
+            .container{
+                border-radius: 1px;
+                background-color: #f9f9f9; 
+                padding-left: 300px;
+                font-family: Arial, Helvetica, sans-serif;
+               
+                margin-top: 250px;
+                font-size: 18px;
+                color: dimgray;
+            }
+            .col-25 {
+                float:left;
+                width: 25%;
+                margin-top: 20px;
+            }
+            .col-75 {
+                float: left;
+                width: 55%;
+                margin-top: 30px;
+            }
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            @media screen and (max-width: 10px) {
+                .col-25, .col-75, input[type=submit] {
+                    width: 100%;
+                    margin-top: 0;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="absolute2"><a href="DotNetDeveloper.html"><img src="logo-india1.png"></a>
+            <P style="font-size: 35px;font-family: sans-serif; padding-top: 0%;">Senior .Net Developer</P></div>
+   
+        <div class="container">
+        <form>
+            <h4 style="font-size: 20px; padding-top: 10%;"><em>SUBMIT YOUR APPLICATION</em></h4>
+            <div class="row">
+                <div class="col-25">
+                    <label>Resume/CV*</label>
+                </div>
+                <div class="col-75">
+                   <input type="file" name="file" accept=".txt" value="Attach Resume">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-25">
+                    <label>Full Name*</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="txt" id="txt1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>E-mail*</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="txt2" id="txt2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+            <label>Phone Number</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="txt3" id="txt3">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+            <label>Current Company</label>
+                    </div>
+                <div class="col-75">
+                    <input type="text" name="txt4" id="txt4">
+                </div>
+            </div><br><br />
+            <h4 style="font-size: 25px;"><em>LINKS</em></h4>
+            <div class="row">
+                <div class="col-25">
+                    <label>LinkedIn URL</label>
+                    </div>
+                <div class="col-75">
+                    <input type="text" name="txt" id="txt1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Twitter URL</label>
+                    </div>
+                <div class="col-75">
+                    <input type="text" name="txt2" id="txt2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+            <label>GitHub URL</label>
+                    </div>
+                <div class="col-75">
+                    <input type="text" name="txt3" id="txt3">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+            <label>Portfolio URL</label>
+                    </div>
+                <div class="col-75">
+                    <input type="text" name="txt4" id="txt4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+            <label>Other Website</label>
+                    </div>
+                <div class="col-75">
+                    <input type="text" name="txt4" id="txt4">
+                </div>
+            </div><br><br />
+            <h4>ADDITIONAL INFORMATION</h4><br>
+            <textarea rows="3" cols="40" name="comment">Add a cover letetr or any thing you want to share... </textarea>
+            <br><br /><br />
+            <div class="row">
+                <button type="submit">Submit Application</button>
+            </div>
+            </form>
+        </div>
+        <div class="absolute3"><h2><font size="3">Lighthouse Software,India. HomePage.</font></h2>
+        <p><font size="4">Jobs powered by</font> <img src="smal.png"> <font size="4"> L E V E R</font></p>
+    </div>
+        
+    </body>
+</html>
+        
+            
