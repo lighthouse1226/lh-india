@@ -48,7 +48,7 @@ h6 {
 
 /* Global Horizontal rules */
 hr {
-  border-color: #F05F40;
+  border-color:  #71737d;
   border-width: 3px;
   max-width: 50px;
 }
@@ -217,7 +217,7 @@ div.center-img {
 
 .ghost-button-sm:hover,
 .ghost-button-sm:active {
-    background-color: #F05F40;
+    background-color: #71737d;
     color: #000;
     text-decoration: none;
 }
