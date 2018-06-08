@@ -139,7 +139,7 @@ div.center-img {
 }
 
 .icon-row i {
-    color: #F05F40;
+    color: #71737d;
 }
 
 /* **************************************************************************** */
@@ -166,7 +166,7 @@ div.center-img {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #f15e2b;
+    background-color: #607D8B;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -422,7 +422,7 @@ nav a.header-image-link {
   }
   .navbar-default .nav > li > a:hover,
   .navbar-default .nav > li > a:focus:hover {
-    color: #f15a2a;
+    color: #607D8B;
   }
   .navbar-default.affix {
     background-color: white;
@@ -443,7 +443,7 @@ nav a.header-image-link {
   }
   .navbar-default.affix .nav > li > a:hover,
   .navbar-default.affix .nav > li > a:focus:hover {
-    color: #F05F40;
+    color: #607D8B;
   }
 }
 @media (min-width: 768px)
@@ -554,7 +554,7 @@ section#services {
 }
 
 #services .service-box .text-primary {
-    color: #F05F40;
+    color: #71737d;
 }
 
 #services .service-box h3 {
