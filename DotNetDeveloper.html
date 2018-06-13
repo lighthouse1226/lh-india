@@ -14,22 +14,42 @@
                  background-color: white;
             }
             .button {
-               position: absolute;
-        top: 135px;
-       right: -105px;
-    background-color: #ffa60d;
-    width: 234px;
-        color: white;
-    border: 0px solid green;
-    border-radius: 5px;
-    padding-top: 12px ;
-                padding-bottom: 12px ;
-    text-decoration: none;
-        text-align: center;
-    }
-            a:hover {
-                background-color:  #e5950b;
-                color:white;
+                position: absolute;
+                top: 115px;
+                right: -105px;
+                display: block;
+                color: black;
+                border-radius: 5px;
+                padding: 10px 27px;
+                text-decoration: none;
+                text-align: center;
+                overflow: hidden;
+                transition: all 1s ease;
+            }
+            a.button:after, a.button:visited:after {
+                content: "";
+                position: absolute;
+                height: 0%;
+                left: 50%;
+                top: 50%;
+                width: 150%;
+                z-index: -1;
+                transition: all 0.75s ease 0s;
+            }
+            a.button:hover {
+                color: #FFF;
+            }
+
+            a.button.apply {
+                border: 2px solid dimgray;
+            }
+            a.button.apply:after {
+                background: #D24D57;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            a.button.apply:hover:after {
+                height: 140%;
+                opacity: 1;
             }
             div.box2 {
                 position: absolute;
@@ -87,8 +107,8 @@
        
     <div class="absolute2"><a href="Career.html"><img src="logo-india1.png"></a>
         <P style="font-size: 35px;font-family: sans-serif;color: dimgrey">Senior .Net Developer</P>
-        <P style="color: dimgray;">HYDERABAD  DEVELOPER   FULL-TIME</P>
-            <div><a class="button" href="DotNetApply.html">APPLY FOR THIS JOB</a></div>
+        <P style="color: dimgray;word-spacing: 10px;">HYDERABAD  DEVELOPER   FULL-TIME</P>
+            <div><a class="button apply" href="DotNetApply.html">APPLY FOR THIS JOB</a></div>
     </div>
         <div class="box2">
             <p>Lighthouse Software (www.lighthousesoftware.com) is a fast-paced software development company. We’re seeking a full time Senior .Net Developer to join our team and help drive our projects to success! We utilize a wide range of technologies at Lighthouse, but for this opportunity in particular we are looking for someone experienced with Microsoft .NET Framework and rich client framework (Angular, Bootstrap, Knockout, etc.).</p>

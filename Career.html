@@ -118,34 +118,82 @@
             top: 125px;
             right: 150px;
             background-color: black;
-            width: 74px;
+
             color: yellow;
             border: 1px solid green;
             border-radius: 5px;
             padding: 8px;
             text-decoration: none;
             text-align: center;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
         }
-        a.btn:hover:not(.active) {
-            background-color: #555;
-            color: red;
+        .btn span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .btn span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .btn:hover span {
+            padding-right: 25px;
+            color: white;
+        }
+
+        .btn:hover span:after {
+            opacity: 1;
+            right: 0;
         }
         .btn1 {
             position: absolute;
-            top: 240px;
+            top: 227px;
             right: 150px;
             color: yellow;
             background-color: black;
-            width: 74px;
+
             border: 1px solid green;
             border-radius: 5px;
             padding: 8px;
             text-decoration: none;
             text-align: center;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
         }
-        a.btn1:hover:not(.active) {
-            background-color: #555;
+        .btn1 span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .btn1 span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -10px;
+            transition: 0.5s;
+        }
+
+        .btn1:hover span {
+            padding-right: 25px;
             color: white;
+        }
+
+        .btn1:hover span:after {
+            opacity: 1;
+            right: 0;
         }
     </style>
 </head>
@@ -160,8 +208,8 @@
 
         <p><font size="4">Senior .Net Developer </font> </p>
         <p style="word-spacing: 6px;"><font size="-1"> HYDERABAD   DEVELOPER   FULL-TIME</font></p>
-        <div><a class="btn" href="JavaDeveloper.html">A P P L Y</a></div>
-        <div><a class="btn1" href="DotNetDeveloper.html">A P P L Y</a></div>
+        <div><a class="btn" href="JavaDeveloper.html"><span>A P P L Y </span></a></div>
+        <div><a class="btn1" href="DotNetDeveloper.html"><span>A P P L Y </span></a></div>
     </div>
     <div class="absolute1"><div class="vl"><div class="gallery"> <img src="round.png" alt="Light" width="120" height="100">
         <div class="desc"><b><font size="3">LIGHTHOUSE</font></b> <font size="-1">SOFTWARE,INDIA</font></div></div>
