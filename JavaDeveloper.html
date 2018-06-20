@@ -16,27 +16,47 @@
                  background-color: white;
             }
             .button {
-               position: absolute;
-        top: 135px;
-      right: -105px;
-    background-color:  #ffa60d;
-    width: 234px;
-        color: white;
-    border: 1px solid #f29d0c;
-    border-radius: 5px;
-    padding-top: 12px ;
-                padding-bottom: 12px ;
-    text-decoration: none;
-        text-align: center;
-               
-   
-    }
-            a:hover {
-                background-color: #e5950b;;
-                color:white;
+
+                position: absolute;
+                top: 115px;
+                right: -105px;
+                display: block;
+                color: black;
+                border-radius: 5px;
+                padding: 10px 27px;
+                text-decoration: none;
+                text-align: center;
+                overflow: hidden;
+                transition: all 1s ease;
+            }
+            a.button:after, a.button:visited:after {
+                content: "";
+                position: absolute;
+                height: 0%;
+                left: 50%;
+                top: 50%;
+                width: 150%;
+                z-index: -1;
+                transition: all 0.75s ease 0s;
+            }
+            a.button:hover {
+                color: #FFF;
+            }
+
+            a.button.apply {
+                border: 2px solid dimgray;
+            }
+            a.button.apply:after {
+                background: #D24D57;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            a.button.apply:hover:after {
+                height: 140%;
+                opacity: 1;
             }
             div.box2 {
-                position: absolute;
+                position: relative;
+
                 margin-top: 260px;
                 border: 0px solid black;
                     background: #f9f9f9;
@@ -51,19 +71,23 @@
                 color:  #515357;
             }
             .button1 {
-              background-color: #ffa60d;
+
+                position: absolute;
+                display: block;
                 color: white;
-                padding-top: 13px;
-                padding-bottom: 13px;
-                padding-left: 28px;
-                padding-right: 28px;
-                text-align: center;
-                border: 1pxsolid black;
-                border-radius: 4px;
-                cursor: pointer;
-                width: 324px;
-                margin-left: 300px;
+                border-radius: 5px;
+                padding: 6px 22px;
                 text-decoration: none;
+                text-align: center;
+                overflow: hidden;
+                transition: all 1s ease;
+                width: 200px;
+                background-color: #ffa60d;
+                left:40%
+            }
+            a.button1:hover {
+                background-color: #e5950b;
+                color:white;
             }
             div.absolute3 {
                 position: absolute;
@@ -76,9 +100,6 @@
                 padding-top : 20px;
                 padding-bottom: 20px;
                 left: 0px;
-                    color: ;
-                
-               font: ;
             }
             b {
     font-weight: 600;
@@ -98,9 +119,10 @@
        
     <div class="absolute2"><a href="Career.html"><img src="logo-india1.png"></a>
         <P style="font-size: 40px;font-family: sans-serif;color: dimgrey">Java Developer</P>
-        <P style="color: dimgray;">HYDERABAD  DEVELOPER   FULL-TIME</P>
-            <div><a class="button" href="JavaApply.html">APPLY FOR THIS JOB</a></div>
-    </div>
+
+        <P style="color: dimgray;word-spacing: 10px;">HYDERABAD  DEVELOPER   FULL-TIME</P>
+            <div><a class="button apply" href="JavaApply.html">APPLY FOR THIS JOB</a></div>
+      </div>
         <div class="box2">
             <p>Lighthouse Software (www.lighthousesoftware.com) is a fast-paced software development company seeking a Java Developer to join our team. <strong>This is a full-time, permanent position based in the Twin Cities</strong>. We are searching for a full-stack developer who also has solid experience with a responsive scripting framework. We use a wide range of technologies on our projects, for this particular opportunity we are looking for someone with experience in core Java, Spring, and Angular.</p>
             <div><br></div>
@@ -175,16 +197,13 @@ Able to create and effectively communicate technical details of application func
             </ul><br>
             <p style="font-style: italic;">Candidates must be eligible to work in the United States without sponsorship. <strong>In addition, we are seeking local candidates as this role is not eligible for travel and relocation reimbursement.</strong></p>
             <p style="font-style: italic;"><strong>Attention Recruiters:</strong> We thank you for your interest, but we prefer to work directly with individuals and our own Lighthouse Network on this posting. We will not review resumes/return calls from unsolicited recruiters</p><br><br />
-            
-            <div><a class="button1" href="JavaApply.html">APPLY FOR THIS JOB</a></div><br><br /><br />
+
+
+            <div><a class="button1 apply1" href="JavaApply.html">APPLY FOR THIS JOB</a></div><br><br /><br />
+
             <div class="absolute3"><h2 style="color: #579eee; font-family: normal 400 16px/1.8 Lato"><font size="4" ><u>Lighthouse Software,India. HomePage.</u></font></h2>
         <p><font size="4">Jobs powered by</font> <img src="smal.png"> <font size="4"> L E V E R</font></p>
     </div>
         </div>
-    
-           
-    </body>
-   
-    
-    
-</html>
+     </body>
+   </html>

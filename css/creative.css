@@ -422,7 +422,9 @@ nav a.header-image-link {
   }
   .navbar-default .nav > li > a:hover,
   .navbar-default .nav > li > a:focus:hover {
-    color: #607D8B;
+
+    color: blue;
+
   }
   .navbar-default.affix {
     background-color: white;
